@@ -8,6 +8,7 @@ if [ "$#" -ne 1 ]; then
   exit 1
 fi
 
+sed -i 's/KC_F24/_KC_PWD/' "$1"
 awk '/PROGMEM keymaps/ {exit} {print}' keymap.c > $buf
 awk 'BEGIN {state=0} /PROGMEM keymaps/ {state=1} {if(state==1) print} /};/ {if(state==1) exit}' "$1" >> $buf
 awk 'BEGIN {state=0} {if(state==2) print} /PROGMEM keymaps/ {state=1} /};/ {if(state==1) state=2}' keymap.c >> $buf
