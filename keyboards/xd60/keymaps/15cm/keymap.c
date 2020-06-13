@@ -4,10 +4,10 @@
 #include QMK_KEYBOARD_H
 
 #define F_TAB LT(1, KC_TAB)
-#define F_CTL MO(2)
+#define F_CTL LT(1, KC_F13)
 #define F_SPC LT(1, KC_SPC)
 // #define F_SPC MT((MOD_LSFT | MOD_LGUI | MOD_LALT), KC_SPC)
-#define F_ESC MT(MOD_RCTL, KC_ESC)
+#define F_ESC MT(MOD_LCTL, KC_ESC)
 #define F_LGUI MT(MOD_LGUI, KC_F7)
 
 #define F_LCAG_A LCAG(KC_A)
@@ -59,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     LAYOUT_all (
                 _______ , KC_F1 , KC_F2 , KC_F3 , KC_F4 , KC_F5 , KC_F6 , KC_F7 , KC_F8 , KC_F9 , KC_F10   , KC_F11   , KC_F12, _______, _______, \
-        _______         , KC_MUTE , KC_VOLD , KC_VOLU ,   _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END, KC_MPLY, KC_MPRV, KC_MNXT, _______,  \
+        _______         , KC_MUTE , KC_VOLD , KC_VOLU ,   _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END, KC_CAPS, KC_MPRV, KC_MNXT, _______,  \
                 _______ , F_LCAG_A, F_LCAG_S, F_LCAG_D, F_LCAG_F, _______, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, LCTL(KC_LEFT), LCTL(KC_RGHT), _______, _______,  \
                 _______ , KC_NO, F_LCAG_Z, F_LCAG_X, F_LCAG_C,   _______, _______, _______, _______, LCTL(KC_BSPC), LCTL(KC_DELETE), _______, _______, _______, _______, \
         _______         , _______  , _______  ,                        _______                         ,   _______ , _______ , _______ , _______, _______),
